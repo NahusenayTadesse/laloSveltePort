@@ -65,29 +65,31 @@
 </script>
 
 <svelte:head>
-	<title>Partner With Us | Contact Lalo Bakery Solutions</title>
+	<title>Contact Lalo Exports & Imports | Global Partner Inquiries</title>
 	<meta
 		name="description"
-		content="Connect with Lalo Bakery Solutions for reliable supply, technical support, and tailored bakery business solutions. Let’s grow your bakery together."
+		content="Get in touch with Lalo Exports & Imports. Partner with us for premium coffee sourcing, commodity trading, and international market distribution."
 	/>
-	<meta
-		name="keywords"
-		content="contact Lalo Bakery Solutions, bakery supply partnership, wholesale inquiry, technical support for bakeries"
-	/>
+	<link rel="canonical" href="https://mohammedlaloie.com/contact" />
 
+	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Contact Lalo Bakery Solutions | Expert Support" />
+	<meta property="og:url" content="https://mohammedlaloie.com/contact" />
+	<meta property="og:title" content="Contact Lalo Exports & Imports | Global Partner Inquiries" />
 	<meta
 		property="og:description"
-		content="Reach out to our team for industry knowledge, product inquiries, and dedicated customer satisfaction."
+		content="Get in touch with Lalo Exports & Imports. Partner with us for premium coffee sourcing, commodity trading, and international market distribution."
 	/>
-	<meta property="og:image" content="/logo.webp" />
+	<meta property="og:image" content="https://mohammedlaloie.com/images/og-contact.jpg" />
 
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:title" content="Lalo Bakery Solutions | Get in Touch" />
-	<meta property="twitter:image" content="/logo.webp" />
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Contact Lalo Exports & Imports | Global Partner Inquiries" />
+	<meta
+		name="twitter:description"
+		content="Get in touch with Lalo Exports & Imports for premium coffee sourcing and international trade."
+	/>
 </svelte:head>
-
 {#snippet fe(
 	label = '',
 	name = '',
@@ -130,9 +132,9 @@
 <section class="relative w-full overflow-hidden">
 	<div
 		class="absolute inset-0 z-0 bg-slate-900"
-		style="	backgroundImage: `url('/contact-hero.jpg')`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center'"
+		style="backgroundImage: url('/contact-hero.jpg');
+					backgroundSize: 'cover';
+					backgroundPosition: 'center';"
 	></div>
 
 	<div class="absolute inset-0 z-10 bg-black/40"></div>

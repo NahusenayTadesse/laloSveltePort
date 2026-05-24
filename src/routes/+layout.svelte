@@ -41,12 +41,10 @@
 <svelte:head><link rel="icon" href="/logo.png" /></svelte:head>
 
 <Toaster position="bottom-right" richColors closeButton />
-<ProgressBar color="#bc3d00" zIndex={1000} />
+<ProgressBar color="#ffffff" zIndex={1000} />
 
-{#if !page.url.pathname.startsWith('/dashboard')}
-	<Header />
+<Header />
+<main class="py-16">
 	{@render children()}
-	<Footer />
-{:else}
-	{@render children()}
-{/if}
+</main>
+<Footer />

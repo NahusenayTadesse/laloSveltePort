@@ -66,20 +66,59 @@
 			brand.
 		</p>
 	</div>
-	<div
-		class="mx-auto grid max-w-5xl grid-cols-1 gap-8 rounded-t-2xl bg-white px-4 py-10 md:grid-cols-2"
-	>
-		{#each companies as c (c.number)}
-			<div class="flex flex-col gap-2">
-				<div class="mb-2 flex items-center gap-4">
-					<span class="text-7xl font-bold text-[#c98e7a]">{c.number}</span>
-					<span class="text-2xl font-semibold text-[#142938]">{c.title}</span>
+	<div class="mx-auto max-w-5xl rounded-2xl bg-white px-6 py-12 md:px-10">
+		<!-- Main Grid Container -->
+		<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+			{#each companies as c (c.number)}
+				<div
+					class="group relative flex flex-col gap-4 rounded-xl border border-dashed border-[#c98e7a]/20 bg-gradient-to-b from-transparent to-[#c98e7a]/5 p-6 transition-all duration-300 hover:border-[#c98e7a]/50 hover:shadow-md"
+				>
+					<!-- Creative Corner Border Accent (Top Right) -->
+					<div
+						class="absolute top-0 right-0 h-8 w-8 rounded-tr-xl border-t-2 border-r-2 border-[#c98e7a]/0 transition-all duration-300 group-hover:border-[#c98e7a]/40"
+					></div>
+
+					<!-- Header Section -->
+					<div class="relative flex items-center gap-4">
+						<!-- Giant, stylized background number -->
+						<span
+							class="font-serif text-5xl leading-none font-black tracking-tighter text-[#c98e7a] opacity-90 select-none md:text-6xl"
+						>
+							{c.number}
+						</span>
+
+						<!-- Title -->
+						<h3 class="text-xl font-bold tracking-tight text-[#142938] md:text-2xl">
+							{c.title}
+						</h3>
+					</div>
+
+					<!-- Content Divider Line -->
+					<div
+						class="h-[1px] w-12 bg-[#c98e7a]/40 transition-all duration-300 group-hover:w-full"
+					></div>
+
+					<!-- Description & Bullets -->
+					<div class="flex h-full flex-col justify-between">
+						<p class="mb-5 text-sm leading-relaxed text-[#142938]/80 md:text-base">
+							{c.desc}
+						</p>
+
+						<!-- Elegant, clean custom bullet list -->
+						<ul class="space-y-3">
+							{#each c.bullets as b}
+								<li class="flex items-start text-sm text-[#142938] md:text-base">
+									<!-- Sleek minimal dot marker -->
+									<span
+										class="mt-2 mr-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c98e7a] transition-transform duration-300 group-hover:scale-125"
+									></span>
+									<span class="opacity-90">{b}</span>
+								</li>
+							{/each}
+						</ul>
+					</div>
 				</div>
-				<p class="mb-2 text-base text-[#142938]">{c.desc}</p>
-				<ul class="list-disc pl-6 text-base text-[#142938]">
-					{#each c.bullets as b}<li>{b}</li>{/each}
-				</ul>
-			</div>
-		{/each}
+			{/each}
+		</div>
 	</div>
 </section>

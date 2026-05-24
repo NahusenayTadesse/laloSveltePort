@@ -1,8 +1,9 @@
 <script>
 	const navLinks = [
 		{ name: 'Home', href: '/' },
-		{ name: 'Our partners', href: '/company' },
 		{ name: 'About us', href: '/about' },
+
+		{ name: 'Subsidiaries', href: '/company' },
 		{ name: 'Contact us', href: '/contact' }
 	];
 
@@ -11,7 +12,7 @@
 
 <header class="fixed top-0 left-0 z-50 w-full bg-[#142938] text-white">
 	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-		<div class="text-2xl font-light tracking-widest">LALO</div>
+		<a href="/" class="text-2xl font-light tracking-widest">LALO</a>
 
 		<nav class="hidden space-x-8 text-sm md:flex">
 			{#each navLinks as link (link.name)}

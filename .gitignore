@@ -8,6 +8,9 @@ node_modules
 /.svelte-kit
 /build
 local.db
+local.db-wal
+local.db-shm
+build.tar
 
 # OS
 .DS_Store

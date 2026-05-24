@@ -48,6 +48,32 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Lalo Subsidiaries | Diversified Global Trade Portfolio</title>
+	<meta
+		name="description"
+		content="Explore Lalo's network of subsidiaries spanning coffee production, premium goods sourcing, and regional distribution networks across international markets."
+	/>
+	<link rel="canonical" href="https://mohammedlaloie.com/subsidiaries" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://mohammedlaloie.com/subsidiaries" />
+	<meta property="og:title" content="Lalo Subsidiaries | Diversified Global Trade Portfolio" />
+	<meta
+		property="og:description"
+		content="Explore Lalo's network of subsidiaries spanning coffee production, premium goods sourcing, and regional distribution networks."
+	/>
+	<meta property="og:image" content="https://mohammedlaloie.com/images/og-subsidiaries.jpg" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Lalo Subsidiaries | Diversified Global Trade Portfolio" />
+	<meta
+		name="twitter:description"
+		content="Explore Lalo's network of subsidiaries spanning coffee production, premium goods sourcing, and regional distribution networks."
+	/>
+</svelte:head>
 <div class="min-h-screen bg-[#f6f7fa]">
 	<section class="relative flex h-[70vh] w-full items-center justify-center">
 		<img
@@ -76,24 +102,60 @@
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 				{#each subsidiaries as s (s.title)}
 					<div
-						class="flex min-h-45 flex-col items-start justify-center rounded-lg bg-[#c98e7a] px-8 py-8 shadow"
+						class="group relative flex min-h-[400px] flex-col justify-between overflow-hidden rounded-2xl border border-[#c98e7a]/20 bg-gradient-to-br from-[#c98e7a]/10 to-[#c98e7a]/30 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#142938]/5"
 					>
-						<h3 class="mb-2 text-xl font-semibold text-[#142938]">
-							{s.title}
-						</h3>
-						<p class="mb-2 text-base font-light text-[#142938]">
-							{s.desc}
-						</p>
-						<ul class="mb-4 list-disc pl-5 text-base text-[#142938]">
-							{#each s.bullets as b (b)}
-								<li>{b}</li>
-							{/each}
-						</ul>
+						<div
+							class="absolute top-0 left-0 h-1.5 w-0 bg-[#142938] transition-all duration-500 group-hover:w-full"
+						></div>
+
+						<div>
+							<div class="mb-4 flex items-center justify-between">
+								<h3 class="text-2xl font-bold tracking-tight text-[#142938]">
+									{s.title}
+								</h3>
+								<span
+									class="font-serif text-4xl text-[#142938] opacity-20 transition-opacity select-none group-hover:opacity-40"
+									>/</span
+								>
+							</div>
+
+							<p class="mb-6 text-sm leading-relaxed font-normal text-[#142938]/80">
+								{s.desc}
+							</p>
+
+							<ul class="mb-8 space-y-3">
+								{#each s.bullets as b (b)}
+									<li class="flex items-start text-sm text-[#142938]/90">
+										<span
+											class="mt-1.5 mr-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#142938] opacity-70"
+										></span>
+										<span>{b}</span>
+									</li>
+								{/each}
+							</ul>
+						</div>
+
 						<a
 							href="/about"
-							class="mt-auto rounded bg-[#142938] px-6 py-2 text-xs font-medium text-white transition-colors hover:bg-[#1a364a]"
+							class="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-[#142938] px-6 py-3 text-xs font-semibold tracking-wider text-white uppercase transition-all duration-300 hover:bg-[#1a364a] hover:shadow-lg hover:shadow-[#142938]/20"
 						>
-							Learn More
+							<span class="relative z-10 flex items-center gap-2">
+								Learn More
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="2.5"
+									stroke="currentColor"
+									class="h-3 w-3 transition-transform duration-300 group-hover/btn:translate-x-1"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M13.5 4.5l6 6m0 0l-6 6m6-6H3"
+									/>
+								</svg>
+							</span>
 						</a>
 					</div>
 				{/each}
