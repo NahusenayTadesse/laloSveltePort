@@ -12,7 +12,9 @@
 
 <header class="fixed top-0 left-0 z-50 w-full bg-[#142938] text-white">
 	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-		<a href="/" class="text-2xl font-light tracking-widest">LALO</a>
+		<a href="/" class="text-2xl font-light tracking-widest">
+			<img src="/logo.png" class="h-10 invert" alt="Lalo" />
+		</a>
 
 		<nav class="hidden space-x-8 text-sm md:flex">
 			{#each navLinks as link (link.name)}

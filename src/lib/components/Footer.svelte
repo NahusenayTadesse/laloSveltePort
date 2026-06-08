@@ -41,7 +41,11 @@
 	<div class="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-4">
 		<div class="mb-6 flex w-full flex-col items-center justify-between gap-4 md:flex-row">
 			<div class="flex flex-col items-center gap-6 md:flex-row">
-				<div class="mb-2 text-lg font-light tracking-widest md:mb-0">LALO</div>
+				<div class="mb-2 text-lg font-light tracking-widest md:mb-0">
+					<a href="/" class="text-2xl font-light tracking-widest">
+						<img src="/logo.png" class="h-10 invert" alt="Lalo" />
+					</a>
+				</div>
 				<nav class="flex flex-wrap gap-4 text-xs">
 					{#each navLinks as link (link.name)}
 						<a href={link.href} class="hover:underline">
@@ -68,7 +72,7 @@
 					<h4 class="mb-4 flex gap-2 font-semibold"><MapPin /> Location</h4>
 					<section class="relative h-32 w-full">
 						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.6989163918774!2d38.74450221007991!3d8.999827389408697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8513494db273%3A0x88235dbe171c4224!2sDiplomat%20Building!5e0!3m2!1sen!2set!4v1772532021053!5m2!1sen!2set"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.665632010768!2d38.7469419!3d9.0028824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85d2794348ab%3A0x138e8c65c23abfbc!2sMozambique%20St%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1780947897063!5m2!1sen!2set"
 							style="border:0;"
 							class="w-full rounded-3xl"
 							loading="lazy"

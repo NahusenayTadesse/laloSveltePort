@@ -6,4 +6,6 @@
 	const messages = $derived(data?.messages);
 </script>
 
-<ContactMessages readForm={data?.readForm} deleteForm={data?.deleteForm} {messages} />
+{#key messages}
+	<ContactMessages readForm={data?.readForm} deleteForm={data?.deleteForm} {messages} />
+{/key}

@@ -142,14 +142,12 @@
 						</div>
 					</div>
 					<div class="flex flex-row gap-4 p-4">
+						<div></div>
 						<Read data={readForm} id={message.id} />
 						<Delete action="?/delete" data={deleteForm} id={message.id} />
 					</div>
 
 					<!-- hover effect -->
-					<div
-						class="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:bg-white/2"
-					></div>
 				</div>
 			{/each}
 		</div>

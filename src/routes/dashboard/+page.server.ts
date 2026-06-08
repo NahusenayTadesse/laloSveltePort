@@ -34,10 +34,12 @@ export const load: PageServerLoad = async () => {
 
 export const actions: Actions = {
 	read: async ({ request }) => {
-		const form = await superValidate(request, zod4(deleteTestimonial));
-		console.log(form);
+		const form = await superValidate(request, zod4(markRead));
+
+		console.log('Server received form data:', form);
 
 		if (!form.valid) {
+			console.log('Validation failed details:', form.errors);
 			return fail(400, { form });
 		}
 
@@ -49,10 +51,7 @@ export const actions: Actions = {
 		} catch (err: any) {
 			return message(
 				form,
-				{
-					type: 'error',
-					text: 'Error while marking message as read.'
-				},
+				{ type: 'error', text: 'Error while marking message as read.' },
 				{ status: 500 }
 			);
 		}

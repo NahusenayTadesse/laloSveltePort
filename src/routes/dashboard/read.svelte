@@ -32,12 +32,12 @@
 
 <form
 	method="post"
-	id="read"
+	id="read-{id}"
 	class="-mt-4 flex h-full flex-col items-start justify-start"
 	action="?/read"
 	use:enhance
 >
-	<button type="submit" class="mt-4" form="read">
+	<button type="submit" class="mt-4" form="read-{id}">
 		{#if $delayed}
 			<Loader class="size-4 animate-spin" />
 			Marking as Read...
@@ -45,5 +45,5 @@
 			<CircleCheckBig /> Mark as Read
 		{/if}
 	</button>
-	<input bind:value={$form.id} name="id" type="hidden" />
+	<input value={$form.id} name="id" type="hidden" />
 </form>

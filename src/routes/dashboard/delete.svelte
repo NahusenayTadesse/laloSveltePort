@@ -46,35 +46,35 @@
 <!-- Popover -->
 {#if open}
 	<div
-		class="absolute right-0 z-50 mt-3 w-80 rounded-xl border border-white/10 bg-white p-5 text-black shadow-2xl"
+		class="absolute top-12 right-4 z-50 w-80 rounded-2xl border border-black/5 bg-white p-5 text-black shadow-[0_20px_50px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-200"
 	>
-		<h3 class="text-lg font-semibold">Delete</h3>
+		<h3 class="text-base font-bold text-zinc-900">Delete Message</h3>
 
-		<p class="mt-2 text-sm text-zinc-600">
+		<p class="mt-2 text-xs leading-relaxed text-zinc-500">
 			Are you sure you want to delete this item? This action is irreversible.
 		</p>
 
-		<div class="mt-5 flex items-center justify-end gap-3">
+		<div class="mt-4 flex items-center justify-end gap-2.5 border-t border-zinc-100 pt-3">
 			<button
 				type="button"
 				onclick={() => (open = false)}
-				class="rounded-md border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
+				class="rounded-xl border border-zinc-200 px-3.5 py-2 text-xs font-semibold text-zinc-600 transition hover:bg-zinc-50 hover:text-zinc-900"
 			>
 				Cancel
 			</button>
 
-			<form method="post" id="delete" action="?/delete" use:enhance>
-				<input bind:value={$form.id} name="id" type="hidden" />
+			<form method="post" action="?/delete" use:enhance>
+				<input value={id} name="id" type="hidden" />
 
 				<button
 					type="submit"
-					class="flex items-center gap-2 rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-800"
+					class="flex items-center gap-2 rounded-xl bg-red-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-red-700 active:scale-95"
 				>
 					{#if $delayed}
-						<Loader class="size-4 animate-spin" />
+						<Loader class="size-3.5 animate-spin" />
 						Deleting...
 					{:else}
-						<Trash class="size-4" />
+						<Trash class="size-3.5" />
 						Delete
 					{/if}
 				</button>
