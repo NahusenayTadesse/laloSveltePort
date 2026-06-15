@@ -1,59 +1,64 @@
 <script>
-	const companies = [
+	import {
+		Coffee,
+		Microwave,
+		Croissant,
+		Globe,
+		WashingMachine,
+		Utensils,
+		Building
+	} from '@lucide/svelte';
+
+	let partners = [
 		{
-			number: '01',
-			title: 'Lalo Coffee Export',
-			desc: 'Sourcing 100% premium, single-origin coffee directly from local farmers to your cup.',
-			bullets: [
-				'Target Audience: International coffee roasters, distributors, specialty cafes, and wholesale buyers in Europe and Asia.',
-				'Flagship Product: Premium coffee beans sourced directly from farms.',
-				'Specialty Products: Organic, fair-trade, and high-altitude coffee varieties.'
-			]
+			name: 'Lalo Coffee Exports',
+			description:
+				'Global commodity supply chain coordination and international logistics management.',
+			icon: Coffee,
+			short: 'LAL_EXP'
+		},
+
+		{
+			name: 'Lalo Laundry',
+			description:
+				'Commercial-scale linen and textile services for major hospitality and industrial clients.',
+			icon: WashingMachine,
+			short: 'LAL_LAU'
 		},
 		{
-			number: '02',
-			title: 'Lalo Bakery Solutions',
-			desc: 'Providing comprehensive solutions and top-grade ingredients to ensure your bakery products stand out.',
-			bullets: [
-				'Target Audience: Bakeries, cafes, hotels, and food companies/industries.',
-				'Key Product Lines: Bulk and commercial supplies, food ingredients, and specialty ingredients.',
-				'Specialty Items: Organic, gluten-free, and health-focused ingredients.'
-			]
+			name: 'Lalo Bakery Solutions',
+			description:
+				'Advanced commercial equipment, ingredients, and operational workflows for high-volume bakeries.',
+			icon: Microwave,
+			short: 'LAL_BAK'
 		},
 		{
-			number: '03',
-			title: 'Lalo Power and Hand Tools',
-			desc: 'Your one-stop destination for a wide range of tools from trusted global brands.',
-			bullets: [
-				'Target Audience: Wholesale suppliers, retailers, construction companies, workshops, and professional contractors.',
-				'Key Product Lines: Hand tools, power tools, construction tools, industrial tools, and specialty tools.',
-				'Flagship Product: Professional-grade power tools.'
-			]
+			name: 'Lalo Bakery',
+			description:
+				'A bakery experience focused on handcrafted pastries, expertly brewed coffee, and high-quality ingredients sourced with care.',
+			icon: Croissant,
+			short: 'LAL_BAK'
 		},
 		{
-			number: '04',
-			title: 'Lalo Cafe & Bakery',
-			desc: 'A cozy spot offering freshly brewed coffee, specialty drinks, and artisan baked goods made with quality and consistency.',
-			bullets: [
-				'Target Audience: Coffee lovers, local residents, and professionals.',
-				'Flagship Product: Our Signature Coffee Blend.',
-				'Specialty Products: Artisan pastries made from freshly baked sourdough and seasonal specialty drinks.'
-			]
+			name: 'Lalo Cafe',
+			description:
+				'Curated beverage and food services integrated within corporate and commercial environments.',
+			icon: Utensils,
+			short: 'LAL_CAF'
 		},
 		{
-			number: '05',
-			title: 'Lalo Laundry',
-			desc: 'Professional laundry and dry cleaning services with a focus on speed, reliability, and attention to detail.',
-			bullets: [
-				'Target Audience: Local residents, busy professionals, and families.',
-				'Specialty Services: Express laundry, pickup & delivery, and advanced stain-removal treatments.'
-			]
+			name: 'Lalo Apartments',
+			description:
+				'Comprehensive residential property management services encompassing leasing, maintenance, and daily administrative operations.',
+			icon: Building,
+			short: 'LAL_APT'
 		},
 		{
-			number: '06',
-			title: 'Lalo Apartments',
-			desc: 'Lalo Apartments offers well-managed, modern residential spaces designed for comfort, security, and convenience. We provide quality living environments tailored for professionals, families, and long-term residents.',
-			bullets: []
+			name: 'Fahem General Trading',
+			description:
+				'Diversified international trade operations across key industrial and material sectors.',
+			icon: Globe,
+			short: 'FAH_GEN'
 		}
 	];
 </script>
@@ -68,54 +73,30 @@
 	</div>
 	<div class="mx-auto max-w-5xl rounded-2xl bg-white px-6 py-12 md:px-10">
 		<!-- Main Grid Container -->
-		<div class="grid grid-cols-1 gap-10 md:grid-cols-2">
-			{#each companies as c (c.number)}
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-8">
+			{#each partners as p (p)}
 				<div
-					class="group relative flex flex-col gap-4 rounded-xl border border-dashed border-[#c98e7a]/20 bg-gradient-to-b from-transparent to-[#c98e7a]/5 p-6 transition-all duration-300 hover:border-[#c98e7a]/50 hover:shadow-md"
+					class="group border-border bg-card hover:border-primary/30 relative flex flex-col gap-5 overflow-hidden rounded-2xl border p-8 transition-all duration-300 ease-in-out hover:shadow-xl"
 				>
-					<!-- Creative Corner Border Accent (Top Right) -->
 					<div
-						class="absolute top-0 right-0 h-8 w-8 rounded-tr-xl border-t-2 border-r-2 border-[#c98e7a]/0 transition-all duration-300 group-hover:border-[#c98e7a]/40"
+						class="bg-primary absolute inset-x-0 top-0 h-1 opacity-0 transition group-hover:opacity-100"
 					></div>
 
-					<!-- Header Section -->
-					<div class="relative flex items-center gap-4">
-						<!-- Giant, stylized background number -->
-						<span
-							class="font-serif text-5xl leading-none font-black tracking-tighter text-[#c98e7a] opacity-90 select-none md:text-6xl"
+					<div class="flex items-center justify-between">
+						<div
+							class="bg-primary/10 text-primary flex size-14 items-center justify-center rounded-full"
 						>
-							{c.number}
-						</span>
-
-						<!-- Title -->
-						<h3 class="text-xl font-bold tracking-tight text-[#142938] md:text-2xl">
-							{c.title}
-						</h3>
+							<p.icon class="size-7" />
+						</div>
 					</div>
 
-					<!-- Content Divider Line -->
-					<div
-						class="h-[1px] w-12 bg-[#c98e7a]/40 transition-all duration-300 group-hover:w-full"
-					></div>
-
-					<!-- Description & Bullets -->
-					<div class="flex h-full flex-col justify-between">
-						<p class="mb-5 text-sm leading-relaxed text-[#142938]/80 md:text-base">
-							{c.desc}
+					<div class="grow space-y-2">
+						<p class="text-foreground text-2xl font-semibold tracking-tight">{p.name}</p>
+						<p
+							class="text-muted-foreground line-clamp-2 text-sm leading-relaxed group-hover:line-clamp-none"
+						>
+							{p.description}
 						</p>
-
-						<!-- Elegant, clean custom bullet list -->
-						<ul class="space-y-3">
-							{#each c.bullets as b}
-								<li class="flex items-start text-sm text-[#142938] md:text-base">
-									<!-- Sleek minimal dot marker -->
-									<span
-										class="mt-2 mr-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c98e7a] transition-transform duration-300 group-hover:scale-125"
-									></span>
-									<span class="opacity-90">{b}</span>
-								</li>
-							{/each}
-						</ul>
 					</div>
 				</div>
 			{/each}
